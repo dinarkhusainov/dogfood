@@ -1,0 +1,23 @@
+@import '../variables';
+
+.footer {
+  border-top: 2px solid #f6f6f6ab;
+  padding: 40px 0;
+
+
+.footcontainer {
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    i {
+      color: $orange;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      border-radius: 30px;
+    }
+  }
+}
