@@ -7,7 +7,8 @@ import fakeProducts from "../src/assets/data.json";
 import {Api} from "./Api";
 import Ctx from "./Ctx"; 
 
-
+const PATH = "/"
+// const PATH = "/DogFood/";
 
 function App() {
  
@@ -71,12 +72,12 @@ function App() {
         />
         <main className="content">
           <Routes>
-            <Route path='/' element={<Home fkprod = {fakeProducts} />}/>
-            <Route path='/catalog' element= {<Catalog data = {visibleProducts} />}/>
-            <Route path='/profile' element= {<Profile />}/>
-            <Route path='/catalog/:id' element= {<Product />}/>
-            <Route path='/cart' element= {<Cart />}/>
-            <Route path='/about' element= {<About />}/>
+            <Route path={PATH} element={<Home fkprod = {fakeProducts} />}/>
+            <Route path={PATH + '/catalog'} element= {<Catalog data = {visibleProducts} />}/>
+            <Route path={PATH + '/profile'} element= {<Profile />}/>
+            <Route path={PATH + '/catalog/:id'} element= {<Product />}/>
+            <Route path={PATH + '/cart'} element= {<Cart />}/>
+            <Route path={PATH + '/about'} element= {<About />}/>
           </Routes>
          
         </main>
