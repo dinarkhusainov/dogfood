@@ -1,20 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import logoSvg from '../../assets/img/dogfoodlogo.png'
 
 import Button from "../Button.jsx";
 import Search from '../Search/Search';
+import Ctx from '../../Ctx';
 
-function Header({user, setUser, data, setModalActive}) {
-  
+function Header({ products, searchProducts, setModalActive}) {
+  const {user, setUser} = useContext(Ctx);
+
   const logIn = (e) => {
     e.preventDefault();
-    // let userName = prompt("Как вас зовут?");
-    // if (userName) {
-    //   localStorage.setItem("sm8", userName);
-    //   setUser(userName);
-    // }
     setModalActive(prev => !prev);
   }
 
@@ -37,9 +34,9 @@ function Header({user, setUser, data, setModalActive}) {
               </div>
             </div>
           </Link>
-          <Search data= {data}/>
+          <Search products= {products} searchProducts={searchProducts}/>
           <div className='header__menu'>
-            { user && <Button className="button button--SignIn"> {user} </Button>}
+            { user && <Link to="/profile"><Button className="button button--SignIn"> {user} </Button> </Link>}
             {!user && <Button className="button button--SignIn" onClick={logIn}> Войти </Button>}
             { user && <Button className="button button--SignIn" onClick={logOut}> Выйти </Button>}
           </div>

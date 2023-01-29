@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import Ctx from '../../Ctx';
 
-function SignUp ({changeAuth, api, close, setToken}) {
+function SignUp ({changeAuth, close }) {
+  const {api, setToken } = useContext(Ctx);
    
   const [inp1, setInp1] = useState("");
   const [inp2, setInp2] = useState("");

@@ -1,17 +1,15 @@
 import React from 'react'
-import { Categories, SortPopup } from '../components';
 import Card from '../components/Card/Card';
-
+import Promo from '../components/Promo/Promo'
+import { Link } from 'react-router-dom';
 
 function Home({fkprod}) {
   
   return ( 
     <div className="container">
-      <div className="content__top">
-        <Categories onClickItem={(name)=> alert (name)} items={['Говядина', 'Птица',  'Свинина', 'Овощи', 'Другое']} />
-        < SortPopup items={['популярности', 'цене', 'алфавиту']}/>
-      </div>
-      <h2 className="content__title"> Все товары  </h2>
+      <Link to='/catalog'><h2> Каталог товаров </h2></Link>
+      <Promo />
+      <h2 className="content__title"> Хиты продаж  </h2>
       <div className="content__items">
       {fkprod.map ((el, i)=> <Card 
                         key={"card_" + i} 
@@ -20,7 +18,6 @@ function Home({fkprod}) {
                         discount={el.discount}
                         wight={el.wight}
                         description={el.description}
-                        like={el.isFavorite}
                         isCart={el.isCart}
                         available={el.available}
                         stock={el.stock}

@@ -38,11 +38,36 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+
+  .searchNull__container{
+    padding:  1em 1em;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    
+        a:hover {
+            h2 {
+            background-color: #fff;
+            color: $orange;
+            }
+    }
+        .searchNull__img {
+        margin-top: 15px;
+        width: 35%;
+    }
+    }
 }
 
 .container {
   width: $container-width;
   margin: 0 auto;
+
+  a:hover {
+    h2 {
+    background-color: #fff;
+    color: $orange;
+    }
+}
 
   &--cart {
     max-width: 820px;
@@ -50,6 +75,10 @@ body {
     .content__title {
       margin: 0;
     }
+  }
+
+  h2 {
+    margin-bottom: 20px;
   }
 }
 

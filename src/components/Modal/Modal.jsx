@@ -3,7 +3,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import "./style.css";
 
-function Modal ({isActive, setState, api, setToken}) {
+function Modal ({ isActive, setState }) {
     const [auth, setAuth] = useState (true);
     let style = {
         display: isActive ? 'flex' : 'none'
@@ -14,8 +14,8 @@ function Modal ({isActive, setState, api, setToken}) {
             <i className="modal-close fa-solid fa-xmark" onClick={() => setState(false)}></i>
             <h2>{auth ? "Войти" : "Регистрация"}</h2>
             {auth ? 
-                <Login changeAuth={setAuth} api={api} close={setState} setToken = {setToken}/> : 
-                <SignUp changeAuth={setAuth} api={api} close={setState} setToken = {setToken}/> 
+                <Login changeAuth={setAuth} close={setState} /> : 
+                <SignUp changeAuth={setAuth} close={setState} /> 
             }
         </div>
     </div>

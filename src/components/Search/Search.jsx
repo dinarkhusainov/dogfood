@@ -1,14 +1,20 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
-function Search ({data}) {
+function Search ({products, searchProducts}) {
+    const navigate = useNavigate();
     const [input, setInput] = useState('')
-    const [searchData, setSearchData] = useState(data);
+    const [searchData, setSearchData] = useState(products);
     const search = (e) => {
+        navigate ('/catalog');
         setInput(e.target.value);
-        let array = data.filter(el=>el.name.toLowerCase().includes(e.target.value.toLowerCase()));
+        let array = products.filter(el=>el.name.toLowerCase().includes(e.target.value.toLowerCase()));
         setSearchData(array);
+        searchProducts(array);
     }
+
+
     
     return (
         <div className='header__search'>

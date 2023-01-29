@@ -13,19 +13,7 @@
 		"pictures": "https://react-learning.ru/image-compressed/1.jpg",
 		"tags": ["new"]
 	},
-	{
-		"id": 2,
-		"name": "Куриные желудочки для собак",
-		"price": 450,
-		"discount": 10,
-		"wight": "100 г",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/2.jpg"
-	},
+
 	{
 		"id": 3,
 		"name": "Крупная говяжья сушено-вяленая жилка",
@@ -39,58 +27,8 @@
 		"stock": 10,
 		"pictures": "https://react-learning.ru/image-compressed/3.jpg"
 	},
-	{
-		"id": 4,
-		"name": "Мелкая говяжья сушено-вяленая жилка",
-		"price": 300,
-		"discount": 0,
-		"wight": "100 г",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/4.jpg"
-	},
-	{
-		"id": 5,
-		"name": "Калтык говяжий для собак",
-		"price": 290,
-		"discount": 0,
-		"wight": "100 г",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/5.jpg"
-	},
-	{
-		"id": 6,
-		"name": "Бублик из бычьего корня",
-		"price": 340,
-		"discount": 0,
-		"wight": "100 г",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/6.jpg"
-	},
-	{
-		"id": 7,
-		"name": "Копыто оленье",
-		"price": 490,
-		"discount": 0,
-		"wight": "1 шт",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/7.jpg"
-	},
+	
+	
 	{
 		"id": 8,
 		"name": "Бараний рубец сушенный",
@@ -181,31 +119,5 @@
 		"available": true,
 		"stock": 10,
 		"pictures": "https://react-learning.ru/image-compressed/14.jpg"
-	},
-	{
-		"id": 15,
-		"name": "Рога оленя для собак весом от 5 до 10 кг. Размер M",
-		"price": 600,
-		"discount": 0,
-		"wight": "1 шт",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/15.jpg"
-	},
-	{
-		"id": 16,
-		"name": "Рога оленя для собак весом от 10 до 30 кг. Размер L",
-		"price": 800,
-		"discount": 0,
-		"wight": "1 шт",
-		"description": "Описание demo",
-		"isFavorite": false,
-		"isCart": false,
-		"available": true,
-		"stock": 10,
-		"pictures": "https://react-learning.ru/image-compressed/16.jpg"
 	}
 ]
