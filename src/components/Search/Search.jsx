@@ -1,17 +1,20 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom";
+import Ctx from "../../Ctx";
 
 
-function Search ({products, searchProducts}) {
+
+function Search () {
     const navigate = useNavigate();
+    const {products, setVisibleProducts, PATH} = useContext(Ctx);
     const [input, setInput] = useState('')
     const [searchData, setSearchData] = useState(products);
     const search = (e) => {
-        navigate ('/catalog');
+        navigate (PATH + 'catalog');
         setInput(e.target.value);
         let array = products.filter(el=>el.name.toLowerCase().includes(e.target.value.toLowerCase()));
         setSearchData(array);
-        searchProducts(array);
+        setVisibleProducts(array);
     }
 
 

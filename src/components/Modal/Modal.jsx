@@ -1,21 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import Ctx from "../../Ctx";
 import "./style.css";
 
-function Modal ({ isActive, setState }) {
+function Modal () {
     const [auth, setAuth] = useState (true);
+    const {modalActive, setModalActive} = useContext(Ctx);
     let style = {
-        display: isActive ? 'flex' : 'none'
+        display: modalActive ? 'flex' : 'none'
     }
     return (
     <div className="modal-container" style={style}>
         <div className="modal">
-            <i className="modal-close fa-solid fa-xmark" onClick={() => setState(false)}></i>
+            <i className="modal-close fa-solid fa-xmark" onClick={() => setModalActive(false)}></i>
             <h2>{auth ? "Войти" : "Регистрация"}</h2>
             {auth ? 
-                <Login changeAuth={setAuth} close={setState} /> : 
-                <SignUp changeAuth={setAuth} close={setState} /> 
+                <Login changeAuth={setAuth} close={setModalActive} /> : 
+                <SignUp changeAuth={setAuth} close={setModalActive} /> 
             }
         </div>
     </div>

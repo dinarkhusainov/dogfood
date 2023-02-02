@@ -6,13 +6,18 @@ import { Home, About, Cart, Product, Profile, Catalog} from './pages';
 import fakeProducts from "../src/assets/data.json";
 import {Api} from "./Api";
 import Ctx from "./Ctx"; 
+import AddForm from './pages/AddForm';
+
 
 const PATH = "/"
-// const PATH = "/DogFood/";
+// const PATH = "/dogfood/";
 
 function App() {
- 
-  const [user, setUser] = useState(localStorage.getItem("sm8"));
+  let usr = localStorage.getItem("sm8");
+  if (usr) {
+    usr = JSON.parse(usr);
+  }
+  const [user, setUser] = useState(usr);
   const [token, setToken] = useState(localStorage.getItem("tokensm8"))
   const [ modalActive, setModalActive] = useState(false);
   const [api, setApi] = useState(new Api(token));
@@ -21,16 +26,22 @@ function App() {
   
   
   useEffect(() => {
+    if (token) {
     api.getProducts()
       .then((res) => res.json())
       .then (data => {
         setProducts(data.products);
       })
+    }
   }, []);
 
   useEffect(() => {
     setApi(new Api(token));
-    setUser(localStorage.getItem("sm8"));
+    let usr = localStorage.getItem("sm8");
+    if (usr) {
+      usr = JSON.parse(usr);
+    }
+    setUser(usr);
   }, [token])
 
   useEffect(() => {
@@ -60,24 +71,28 @@ function App() {
       user: user,
       token: token,
       api: api,
+      modalActive: modalActive,
+      products: products, 
+      visibleProducts: visibleProducts,
       setUser: setUser,
       setToken: setToken,
-      setApi: setApi
+      setApi: setApi,
+      setModalActive: setModalActive,
+      setProducts: setProducts,
+      setVisibleProducts: setVisibleProducts,
+      PATH: PATH
     }}>    
       <div className="wrapper">
-        <Header 
-          setModalActive={setModalActive}
-          products = {products}
-          searchProducts={setVisibleProducts}
-        />
+        <Header />
         <main className="content">
           <Routes>
             <Route path={PATH} element={<Home fkprod = {fakeProducts} />}/>
-            <Route path={PATH + '/catalog'} element= {<Catalog data = {visibleProducts} />}/>
-            <Route path={PATH + '/profile'} element= {<Profile />}/>
-            <Route path={PATH + '/catalog/:id'} element= {<Product />}/>
-            <Route path={PATH + '/cart'} element= {<Cart />}/>
-            <Route path={PATH + '/about'} element= {<About />}/>
+            <Route path={PATH + 'catalog'} element= {<Catalog />}/>
+            <Route path={PATH + 'profile'} element= {<Profile />}/>
+            <Route path={PATH + 'catalog/:id'} element= {<Product />}/>
+            <Route path={PATH + 'cart'} element= {<Cart />}/>
+            <Route path={PATH + 'about'} element= {<About />}/>
+            <Route path={PATH + 'add' } element={<AddForm />}/>
           </Routes>
          
         </main>

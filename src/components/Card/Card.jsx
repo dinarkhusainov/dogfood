@@ -17,12 +17,12 @@ return (
         />
         <h4 className="product-block__title">{productName}</h4>
         <div className="product-block__discount">Скидка {discount} %</div>
-        <div> Вес: {wight} </div>
-        <div>{description} </div>
+        <p> Вес: {wight} </p>
+        <p>{description} </p>
         <div> В корзине {isCart} F/tr</div>
-        <div> Доступно {available} F/tr </div>
-        <div> Остаток {stock} шт. </div>
-        <div>{tags} </div>
+        <p> Доступно {available} F/tr </p>
+        <p> Остаток {stock} шт. </p>
+        <p>{tags} </p>
         <div className="product-block__bottom">
           <div className="product-block__price">{price} ₽ </div>
             <div className="button button--outline button--add">

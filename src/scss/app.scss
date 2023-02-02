@@ -62,6 +62,11 @@ body {
   width: $container-width;
   margin: 0 auto;
 
+  .add__product {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
   a:hover {
     h2 {
     background-color: #fff;

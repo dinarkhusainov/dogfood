@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import Ctx from '../../Ctx';
 
 function Login ({changeAuth, close }) {
-  const {api, setToken} = useContext(Ctx);
+  const {api, setToken, setUser} = useContext(Ctx);
    
   const [inp1, setInp1] = useState("");
   const [inp2, setInp2] = useState("");
@@ -16,10 +16,10 @@ function Login ({changeAuth, close }) {
       api.signIn(body)
         .then (res => res.json())
         .then ( data => {
-          localStorage.setItem("sm8", data.data.name);
+          localStorage.setItem("sm8", JSON.stringify(data.data));
           localStorage.setItem("tokensm8", data.token);
           setToken(data.token);
-        
+          setUser(data.data);
           if (!data.err) {
             setInp1("");
             setInp2("");

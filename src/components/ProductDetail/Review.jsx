@@ -1,7 +1,7 @@
 import React from 'react'
 import { Star, StarFill} from "react-bootstrap-icons"
 
-function Review({author, rating, created_at}) {
+function Review({author, text, rating, created_at}) {
   const setRating = (n) => {
     let stars = [];
     for (let i=0; i<n; i++) {
@@ -15,11 +15,12 @@ function Review({author, rating, created_at}) {
 
   return (
     <>
+      <hr></hr>
       <h4>{author || ''}</h4>
       <div>{setRating(rating)}</div>
+      <p>{text}</p>
       <div>{new Date (created_at).toLocaleString()}</div>
-
-
+      <hr></hr>
     </>
   )
 }

@@ -33,12 +33,11 @@ function SignUp ({changeAuth, close }) {
       api.signUp(body)
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           if (!data.err) {
             api.signIn(body)
               .then(res => res.json())
               .then (data => {
-                localStorage.setItem("sm8", data.data.name);
+                localStorage.setItem("sm8", JSON.stringify(data.data));
                 localStorage.setItem("tokensm8", data.token);
                 setToken(data.token);
               })

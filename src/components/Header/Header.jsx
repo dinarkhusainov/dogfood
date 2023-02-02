@@ -7,8 +7,8 @@ import Button from "../Button.jsx";
 import Search from '../Search/Search';
 import Ctx from '../../Ctx';
 
-function Header({ products, searchProducts, setModalActive}) {
-  const {user, setUser} = useContext(Ctx);
+function Header() {
+  const {user, setUser, setModalActive, PATH} = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ function Header({ products, searchProducts, setModalActive}) {
   return (
       <header className="header">
         <div className="container">
-          <Link to="/">
+          <Link to={PATH}>
             <div className="header__logo">
               <img width="38" src={logoSvg} alt="DogFood logo" />
               <div>
@@ -34,14 +34,13 @@ function Header({ products, searchProducts, setModalActive}) {
               </div>
             </div>
           </Link>
-          <Search products= {products} searchProducts={searchProducts}/>
+          <Search />
           <div className='header__menu'>
-            { user && <Link to="/profile"><Button className="button button--SignIn"> {user} </Button> </Link>}
+            { user && user.name && <Link to={PATH +'profile'}><Button className="button button--SignIn"> {user.name} </Button> </Link>}
             {!user && <Button className="button button--SignIn" onClick={logIn}> Войти </Button>}
-            { user && <Button className="button button--SignIn" onClick={logOut}> Выйти </Button>}
           </div>
           <div className="header__cart">
-          <Link to="/cart">
+          <Link to={PATH +'cart'}>
             < Button className="button button--cart">
                 <span>520 ₽</span>
                 <div className="button__delimiter"></div>
