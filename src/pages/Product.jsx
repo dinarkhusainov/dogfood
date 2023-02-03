@@ -1,12 +1,13 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { Trash3 } from 'react-bootstrap-icons';
 import Review from '../components/ProductDetail/Review';
 import Ctx from '../Ctx';
 
 
 const Product = () => {
-const {api} = useContext(Ctx)
-
+    const {api, PATH, user, setProducts } = useContext(Ctx)
+    const navigate = useNavigate();
     const {id} = useParams();
     const [product, setProduct] = useState({});
     
@@ -15,13 +16,36 @@ const {api} = useContext(Ctx)
             .then(res => res.json())
             .then(data => {
                 setProduct(data);
+                console.log(data.reviews)
             })
     }, []);
 
+    const remove = () => {
+        api.delProduct(id) 
+            .then(res => res.json())
+            .then(data => {
+                if(!data.error) {
+                    setProducts(prev => prev.filter(g =>g._id !==data._id))
+                    navigate(`${PATH}catalog`);
+                }
+            })
+        }
+
+    const btnSt = {
+        position: "absolute",
+        right: "130px",
+        top: "210px"
+    }
+
     return (
         <div className="container">
-            <Link to='/catalog'><h2>  Вернуться к покупкам </h2></Link>
+            <Link to={PATH + 'catalog'}><h2>  Вернуться к покупкам </h2></Link>
             <div className="container product-block">
+                {product && product.author && product.author._id === user._id &&<button 
+                className="button" 
+                onClick={remove}
+                style={btnSt}> 
+                <Trash3 /></button>}
                 <img
                     className="product-block__image"
                     src={product.pictures}

@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import Ctx from "../../Ctx";
 
-function Card({productName, price, discount, wight, description, like, isCart, available, stock, pictures, tags}) {
+function Card({name, price, discount, wight, description, isFavorite, isCart, available, stock, pictures, tags, author}) {
+  const {user} =useContext(Ctx);
+  const like = author._id === user._id
 
 return (
     <div className="product-block">
@@ -15,7 +18,7 @@ return (
           src={pictures}
           alt="product"
         />
-        <h4 className="product-block__title">{productName}</h4>
+        <h4 className="product-block__title">{name}</h4>
         <div className="product-block__discount">Скидка {discount} %</div>
         <p> Вес: {wight} </p>
         <p>{description} </p>

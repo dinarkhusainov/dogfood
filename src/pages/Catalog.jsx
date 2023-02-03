@@ -4,11 +4,13 @@ import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
 import searhNullPng from "../assets/img/searchNull.png"
 import Ctx from "../Ctx";
-
+import Pagination from "../Pagination/Pagination";
+import usePagination from "../hooks/usePagination";
 
 
 function Catalog() {
     const { visibleProducts, PATH, user, setModalActive } = useContext(Ctx);
+    const paginate = usePagination(visibleProducts, 12)
     const logIn = (e) => {
         e.preventDefault();
         setModalActive(prev => !prev);
@@ -29,24 +31,13 @@ function Catalog() {
                 </div>
                 <div className="add__product">
                     <h2>Все товары</h2>
+                    <Pagination hook={paginate} />
                     <Link to={PATH +'add'}> <Button className="button"> Добавить товар </Button></Link>
                 </div>
                 <div className="content__items">
-                        {visibleProducts && visibleProducts.map ((el, i)=> <Link to={PATH + `catalog/${el._id}`} key={el._id}>
-                            <Card 
-                                key={"card_" + i} 
-                                productName={el.name} 
-                                price={el.price} 
-                                discount={el.discount}
-                                wight={el.wight}
-                                description={el.description}
-                                like={el.isFavorite}
-                                isCart={el.isCart}
-                                available={el.available}
-                                stock={el.stock}
-                                pictures={el.pictures}
-                                tags={el.tags}
-                            />
+                        {paginate.setPageData().map ((el, i)=> 
+                        <Link to={PATH + `catalog/${el._id}`} key={el._id}>
+                            <Card key={"card_" + i} {...el}/>
                         </Link>)}
                 </div>
             </div> 

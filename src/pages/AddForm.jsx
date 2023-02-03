@@ -104,6 +104,7 @@ const AddForm = () =>  {
             <input className='add__input' 
                 type="url"
                 placeholder='https://www.chanchao.com.tw/images/default.jpg'
+                required
                 value={pictures}
                 onChange={e => setPictures(e.target.value)}               
             />

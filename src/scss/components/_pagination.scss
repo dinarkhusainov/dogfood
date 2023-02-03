@@ -1,0 +1,27 @@
+@import '../variables';
+.page-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    
+   .page {
+    height: 25px;
+    width: 50px;
+    font-size: 14px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(10, 10, 10, 0.19), 0 6px 6px rgba(19, 18, 18, 0.23);
+    text-align: center;
+    background-color: #9c9a9a38;
+    cursor: pointer;
+    border-width: 0;
+    
+    &:hover {
+        box-shadow: 0 10px 20px rgba(228, 128, 71, 0.19), 0 6px 6px rgba(228, 81, 13, 0.568);
+      }
+
+      .rotate {
+        transform: scaleX(-1);
+      }
+    } 
+}

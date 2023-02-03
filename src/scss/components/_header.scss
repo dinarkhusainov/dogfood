@@ -52,6 +52,10 @@
     min-width: 400px;
     margin: 0px auto;
     border-radius: 30px;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(241, 115, 42, 0.19), 0 6px 6px rgba(228, 81, 13, 0.568);
+   }
     
     input {
       padding-left: 10em;
@@ -61,12 +65,16 @@
       height: 30px;
       line-height: 30px;
       border: transparent;
+
+      
     } 
   }
 
   .search__result {
     color: #8f8f8f;
   }
+
+ 
 
 }
 
