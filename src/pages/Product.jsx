@@ -6,7 +6,7 @@ import Ctx from '../Ctx';
 
 
 const Product = () => {
-    const {api, PATH, user, setProducts } = useContext(Ctx)
+    const {api, PATH, user, like, setProducts } = useContext(Ctx)
     const navigate = useNavigate();
     const {id} = useParams();
     const [product, setProduct] = useState({});
@@ -51,7 +51,6 @@ const Product = () => {
                     src={product.pictures}
                     alt="product"
                 />
-                
                 <h2>{product.name || "Страница товара"}</h2> 
                 <p>{product.description} </p>
                 <div className="product-block__bottom">

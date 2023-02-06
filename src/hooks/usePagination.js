@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState} from "react"; 
+
 
 function usePagination (data, cnt) {
     const [currentPage, setCurrentPage] =useState(1)
@@ -25,6 +26,5 @@ function usePagination (data, cnt) {
 
 
 }
-
 
 export default usePagination

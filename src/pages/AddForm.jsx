@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import { useNavigate } from "react-router";
 import Ctx from "../Ctx";
-import { Button } from "../components";
+import { ButtonMy } from "../components";
 
 const AddForm = () =>  {
     const [name, setName] = useState("");
@@ -116,7 +116,7 @@ const AddForm = () =>  {
                 value={description}
                 onChange={e => setDescription(e.target.value)}               
             />
-            <Button type="submit">Добавить</Button>
+            <ButtonMy type="submit">Добавить</ButtonMy>
         </form>
     </div>
     )

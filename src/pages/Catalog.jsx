@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import { Button, Categories, SortPopup } from "../components";
+import { ButtonMy, Categories, SortPopup } from "../components";
 import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
-import searhNullPng from "../assets/img/searchNull.png"
+import searchNullPng from "../assets/img/searchNull.png"
 import Ctx from "../Ctx";
 import Pagination from "../Pagination/Pagination";
 import usePagination from "../hooks/usePagination";
@@ -32,7 +32,7 @@ function Catalog() {
                 <div className="add__product">
                     <h2>Все товары</h2>
                     <Pagination hook={paginate} />
-                    <Link to={PATH +'add'}> <Button className="button"> Добавить товар </Button></Link>
+                    <Link to={PATH +'add'}> <ButtonMy className="button"> Добавить товар </ButtonMy></Link>
                 </div>
                 <div className="content__items">
                         {paginate.setPageData().map ((el, i)=> 
@@ -44,7 +44,7 @@ function Catalog() {
             : <div className="searchNull__container">
                 <h3> Извините, по вашему запросу ничего не найдено</h3>
                 <Link to={PATH} onClick={clearSearch}> <h2> Перейти к покупкам </h2></Link>
-                <img className='searchNull__img' src={searhNullPng} alt="Товаров не найдено" />
+                <img className='searchNull__img' src={searchNullPng} alt="Товаров не найдено" />
             </div>
         }
     </>}
@@ -54,7 +54,7 @@ function Catalog() {
             <h3> Извините, вы не авторизовались </h3>
             <Link><h2 onClick={logIn} > Войти / Зарегистрироваться </h2></Link>
             <Link to={PATH}> <h2> Перейти на главную страницу </h2></Link>
-            <img className='searchNull__img' src={searhNullPng} alt="Товаров не найдено" />
+            <img className='searchNull__img' src={searchNullPng} alt="Товаров не найдено" />
         </div> 
     }
     </>

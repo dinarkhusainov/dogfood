@@ -2,32 +2,27 @@ import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import logoSvg from '../../assets/img/dogfoodlogo.png'
+import { HouseHeart } from 'react-bootstrap-icons'; 
 
-import Button from "../Button.jsx";
+import ButtonMy from "../ButtonMy.jsx";
 import Search from '../Search/Search';
 import Ctx from '../../Ctx';
 
+
 function Header() {
-  const {user, setUser, setModalActive, PATH} = useContext(Ctx);
+  const {user, basket, favorites, setModalActive, gds, PATH} = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
     setModalActive(prev => !prev);
   }
-
-  const logOut = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("sm8");
-    setUser("");
-  }
   
-    
   return (
       <header className="header">
         <div className="container">
           <Link to={PATH}>
-            <div className="header__logo">
-              <img width="38" src={logoSvg} alt="DogFood logo" />
+            <div className="header__log">
+              <img width="60" height="60" src={logoSvg} alt="DogFood logo" />
               <div>
                 <h1>DogFood</h1>
                 <p>еда для друга</p>
@@ -36,13 +31,27 @@ function Header() {
           </Link>
           <Search />
           <div className='header__menu'>
-            { user && user.name && <Link to={PATH +'profile'}><Button className="button button--SignIn"> {user.name} </Button> </Link>}
-            {!user && <Button className="button button--SignIn" onClick={logIn}> Войти </Button>}
+            {user &&<Link to={PATH +'favorites'}> 
+              <ButtonMy className="button--favor">
+                <HouseHeart /> 
+                {favorites.length>0 && <span>{favorites.length}</span>}
+              </ButtonMy>
+            </Link>}
+            { user && user.name && <Link to={PATH +'profile'}>
+              <ButtonMy className="button button--SignIn"> {user.name} </ButtonMy> 
+            </Link>}
+            {!user && <ButtonMy className="button button--SignIn" onClick={logIn}> 
+              Войти 
+            </ButtonMy>}
           </div>
           <div className="header__cart">
-          <Link to={PATH +'cart'}>
-            < Button className="button button--cart">
-                <span>520 ₽</span>
+            {user &&<Link to={PATH +'basket'}>
+            < ButtonMy className="button button--cart">
+                <span>{basket.reduce((acc, el, i) => {
+                            acc += el.cnt * gds[i].price;
+                            return acc;
+                        }, 0)}₽
+                </span>
                 <div className="button__delimiter"></div>
                 <svg
                   width="18"
@@ -73,9 +82,9 @@ function Header() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>3</span>
-            </Button>
-          </Link>            
+                <span>{basket.reduce((acc, el) => acc + el.cnt, 0)}</span>
+            </ButtonMy>
+          </Link>}            
           </div>
         </div>
       </header>

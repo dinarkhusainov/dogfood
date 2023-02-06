@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import {Routes, Route } from "react-router-dom"
 
 import { Header, Footer, Modal } from './components';
-import { Home, About, Cart, Product, Profile, Catalog} from './pages';
-import fakeProducts from "../src/assets/data.json";
+import { Home, About, Basket, Product, Profile, Catalog, Favorites, AddForm} from './pages';
+
 import {Api} from "./Api";
 import Ctx from "./Ctx"; 
-import AddForm from './pages/AddForm';
-
 
 const PATH = "/"
 // const PATH = "/dogfood/";
@@ -23,7 +21,9 @@ function App() {
   const [api, setApi] = useState(new Api(token));
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(products);
-  
+  const [favorites, setFavorites] = useState ([]);
+  const [basket, setBasket] = useState(localStorage.getItem("basket8") ? JSON.parse(localStorage.getItem("basket8")): [])
+  const [gds, setGds] = useState([]);
   
   useEffect(() => {
     if (token) {
@@ -31,6 +31,7 @@ function App() {
       .then((res) => res.json())
       .then (data => {
         setProducts(data.products);
+        setVisibleProducts(data.products);
       })
     }
   }, []);
@@ -56,15 +57,30 @@ function App() {
       api.getProducts()
       .then(res => res.json())
       .then (data => {
+        setVisibleProducts(data.products);
         setProducts(data.products);
       })
     }
   }, [api])
 
-
   useEffect(()=>{
-    setVisibleProducts(products);
+    setFavorites(products.filter(el => {
+      return el.likes && el.likes.includes(user._id)}))
   },[products])
+
+  useEffect(()=> {
+    localStorage.setItem("basket8", JSON.stringify(basket));
+  }, [basket])
+
+  useEffect(() => {
+    let arr = [];
+    if (products.length) {
+        basket.forEach(el => {
+            arr.push(products.filter(g => g._id === el.id)[0])
+        })
+    }
+    setGds(arr);
+  }, [basket, products])
 
   return (
     <Ctx.Provider value={{
@@ -74,25 +90,33 @@ function App() {
       modalActive: modalActive,
       products: products, 
       visibleProducts: visibleProducts,
+      favorites: favorites,
+      basket:basket,
+      gds:gds,
       setUser: setUser,
       setToken: setToken,
       setApi: setApi,
       setModalActive: setModalActive,
       setProducts: setProducts,
       setVisibleProducts: setVisibleProducts,
-      PATH: PATH
+      setFavorites: setFavorites,
+      setBasket:setBasket,
+      setGds:setGds,
+      PATH: PATH,
+
     }}>    
       <div className="wrapper">
         <Header />
         <main className="content">
           <Routes>
-            <Route path={PATH} element={<Home fkprod = {fakeProducts} />}/>
+            <Route path={PATH} element={<Home />}/>
             <Route path={PATH + 'catalog'} element= {<Catalog />}/>
             <Route path={PATH + 'profile'} element= {<Profile />}/>
             <Route path={PATH + 'catalog/:id'} element= {<Product />}/>
-            <Route path={PATH + 'cart'} element= {<Cart />}/>
+            <Route path={PATH + 'basket'} element= {<Basket />}/>
             <Route path={PATH + 'about'} element= {<About />}/>
             <Route path={PATH + 'add' } element={<AddForm />}/>
+            <Route path={PATH + 'favorites' } element={<Favorites />}/>
           </Routes>
          
         </main>
