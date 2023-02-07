@@ -11,9 +11,9 @@ function Modal () {
         display: modalActive ? 'flex' : 'none'
     }
     return (
-    <div className="modal-container" style={style}>
-        <div className="modal">
-            <i className="modal-close fa-solid fa-xmark" onClick={() => setModalActive(false)}></i>
+    <div className="modal1--container" style={style}>
+        <div className="modal1">
+            <i className="modal1-close fa-solid fa-xmark" onClick={() => setModalActive(false)}></i>
             <h2>{auth ? "Войти" : "Регистрация"}</h2>
             {auth ? 
                 <Login changeAuth={setAuth} close={setModalActive} /> : 

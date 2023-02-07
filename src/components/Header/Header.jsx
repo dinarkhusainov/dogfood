@@ -10,7 +10,7 @@ import Ctx from '../../Ctx';
 
 
 function Header() {
-  const {user, basket, favorites, setModalActive, gds, PATH} = useContext(Ctx);
+  const {user, basket, favorites, setModalActive, PATH} = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ function Header() {
   
   return (
       <header className="header">
-        <div className="container">
+        <div className="header__container">
           <Link to={PATH}>
             <div className="header__log">
               <img width="60" height="60" src={logoSvg} alt="DogFood logo" />
@@ -32,7 +32,7 @@ function Header() {
           <Search />
           <div className='header__menu'>
             {user &&<Link to={PATH +'favorites'}> 
-              <ButtonMy className="button--favor">
+              <ButtonMy className="button--SignIn">
                 <HouseHeart /> 
                 {favorites.length>0 && <span>{favorites.length}</span>}
               </ButtonMy>
@@ -47,12 +47,6 @@ function Header() {
           <div className="header__cart">
             {user &&<Link to={PATH +'basket'}>
             < ButtonMy className="button button--cart">
-                <span>{basket.reduce((acc, el, i) => {
-                            acc += el.cnt * gds[i].price;
-                            return acc;
-                        }, 0)}₽
-                </span>
-                <div className="button__delimiter"></div>
                 <svg
                   width="18"
                   height="18"

@@ -53,29 +53,29 @@ function SignUp ({changeAuth, close }) {
 
     return (
       <form onSubmit={sendForm}>
-        <input className='modal__input' 
+        <input className='modal1__input' 
           type="email" 
           placeholder='Электронная почта'
           required
           value={inp1}
           onChange = {(e) => {setInp1(e.target.value)}}  
         />
-        <input className='modal__input'
+        <input className='modal1__input'
           type="password" 
           placeholder='Пароль' 
           value={inp2}
           onChange = {(e) => {checkPswrd(e.target.value)}}
         />
-        <input className='modal__input'
+        <input className='modal1__input'
           type="password" 
           placeholder='Повторите пароль' 
           value={inp3}
           onChange = {(e) => {checkPswrd(e.target.value, "secondary")}}  
         />
-        <button className='btn' type='submit' disabled = {testPswrd}>
+        <button className='btn1' type='submit' disabled = {testPswrd}>
           Зарегистрироваться
         </button>
-        <button className='btn link' type='button' onClick={() => {changeAuth(prev =>!prev)}}>
+        <button className='btn1 link' type='button' onClick={() => {changeAuth(prev =>!prev)}}>
           Войти
         </button>
       </form>

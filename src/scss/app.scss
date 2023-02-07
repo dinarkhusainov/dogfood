@@ -59,8 +59,7 @@ body {
 }
 
 .container {
-  width: $container-width;
-  margin: 0 auto;
+  width: 90%;
 
   .add__product {
     display: flex;
@@ -348,8 +347,78 @@ body {
   }
 }
 
-@media (max-width: 1260px) {
+/* Планшеты */
+@media (max-width: 1024px) {
+
+  .container {
+    width: 100%;
+  }
+  .content__top {
+    flex-direction: column;
+  }
   .content__items {
-    grid-template-columns: (2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      
+  }
+
+  .categories {
+    
+    ul {
+    
+      li {
+        padding: 10px;
+      }
+    }
+  }
+
+}
+/* Мобильные */
+@media (max-width: 790px) {
+  .container {
+    width: 100%;
+  }
+  .content__top {
+    flex-direction: column;
+  }
+  .content__items {
+      grid-template-columns: repeat(1, 1fr);
+      
+      
+  }
+  .categories {
+    
+    ul {
+    
+      li {
+        padding: 5px;
+      }
+    }
+  }
+
+  .wrapper {
+    margin: 0 10px;
+    width: 97%;
+  }
+  .add__product{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header__container{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-self: center;
+  }
+  .header__search{
+    width: 80%;
+  }
+  .footcontainer{
+    flex-direction: column;
   }
 }

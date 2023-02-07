@@ -63,6 +63,27 @@ class Api {
             }
         })
     }
+    updUser(body, img = false) {
+        return fetch(`${this.path}/v2/${this.group}/users/me${img ? "/avatar" : ""}`, {
+            method: "PATCH",
+            headers: {
+                "authorization": `Bearer ${this.token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+
+    addReview(id, body) {
+        return fetch(`${this.path}/products/review/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${this.token}`
+            },
+            body: JSON.stringify(body)
+        })
+    }
 }
 
 export {Api};

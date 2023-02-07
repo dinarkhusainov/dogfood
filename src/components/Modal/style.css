@@ -1,6 +1,6 @@
 @import '../../scss/_variables.scss';
 
-.modal-container {
+.modal1--container {
     position: fixed;
     background-color: #2228;
     top: 0;
@@ -13,7 +13,7 @@
 
 }
 
-.modal {
+.modal1 {
     width: 300px;
     background-color: #fff;
     padding: 20px;
@@ -24,7 +24,7 @@
     position: relative;
 }
 
-.modal h2 {
+.modal1 h2 {
     margin: 0;
     text-align: center;
 }
@@ -48,7 +48,7 @@ form {
     justify-content: center;
 }
 
-.modal__input  {
+.modal1__input  {
     color: #8f8f8f;
     font-size: 1rem;
     width: 250px;
@@ -61,11 +61,11 @@ form {
     margin: 0px auto;
     border-radius: 30px;
 }
- .modal__input:focus {
+ .modal1__input:focus {
     box-shadow: 0 10px 20px rgba(241, 115, 42, 0.19), 0 6px 6px rgba(228, 81, 13, 0.568);
  }
 
-button.btn {
+button.btn1 {
     border: none;
     height: 30px;
     border-radius: 10px;

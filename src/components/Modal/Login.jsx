@@ -32,23 +32,23 @@ function Login ({changeAuth, close }) {
 
     return (
       <form onSubmit={sendForm}>
-        <input className='modal__input' 
+        <input className='modal1__input' 
           type="email" 
           placeholder='Электронная почта'
           required
           value={inp1}
           onChange = {(e) => {setInp1(e.target.value)}}  
         />
-        <input className='modal__input'
+        <input className='modal1__input'
           type="password" 
           placeholder='Пароль' 
           value={inp2}
           onChange = {(e) => {setInp2(e.target.value)}}
         />
-        <button className='btn' type='submit'>
+        <button className='btn1' type='submit'>
           Войти
         </button>
-        <button className='btn link' type="button" onClick={() => {changeAuth(prev =>!prev)}}>
+        <button className='btn1 link' type="button" onClick={() => {changeAuth(prev =>!prev)}}>
           Регистрация 
         </button>
       </form>

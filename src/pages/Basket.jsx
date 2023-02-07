@@ -7,7 +7,7 @@ import Row from "../components/Row/row"
 import imgBasket from "../assets/img/empty-cart.png"
 
 function Basket() {
-  const {basket, PATH, gds,} = useContext(Ctx);
+  const {basket, PATH, gds} = useContext(Ctx);
 
   return ( 
     <div className="container">

@@ -38,24 +38,26 @@ function Card({name, price, discount, wight, description, likes, isCart, _id, av
         })
 }
 
-  const buy = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setBasket(prev => {
-      const test = prev.filter(el => el.id === _id)
-      if (test.length) {
-        return prev.map(el=> {
-          if (el.id === _id) {
-            el.cnt++
-          } 
-          return el;
-        })
-      } else {
-         return [...prev,{id: _id, cnt: 1}]
-      }
-    })
+const buy = (e) => {
+  e.stopPropagation();
+  e.preventDefault();
+  setBasket(prev => {
+    const test = prev.filter(el => el.id === _id)
+    if (test.length) {
+      return prev.map(el=> {
+        if (el.id === _id) {
+          el.cnt++
+        } 
+        return el;
+      })
+    } else {
+       return [...prev,{id: _id, cnt: 1}]
+    }
+  })
 
   }
+
+
 
 return (
     <div className="product-block">
@@ -71,15 +73,13 @@ return (
           alt="product"
         />
         <h4 className="product-block__title">{name}</h4>
-        <div className="product-block__discount"><p>Скидка {discount}%</p> </div>
+        {discount > 0 && <p className="product-block__discount">Скидка {discount} %</p>}
         <p> Вес: {wight} </p>
-        <p>{description} </p>
-        <p> В корзине {isCart} F/tr</p>
-        <p> Доступно {available} F/tr </p>
-        <p> Остаток {stock} шт. </p>
-        <p>{tags} </p>
+        {isCart&&<p> В корзине</p>}
+        {available && <p> Есть на складе </p>}
+        {stock>0 && <p> Остаток {stock} шт. </p>}
         <div className="product-block__bottom">
-          <div className="product-block__price"><h2>{price} ₽ </h2></div>
+          <div className="product-block__price"><h2>{price} ₽</h2> </div>
             <button className="button button--outline button--add" onClick={buy}>
                 <svg
                 width="12"
@@ -94,7 +94,7 @@ return (
               />
               </svg>
               <span>Добавить</span>
-              <i>2</i>
+              <i></i>
             </button>
           </div>
       </div>
