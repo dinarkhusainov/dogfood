@@ -24,7 +24,7 @@ export default function Ads() {
     </div>
   </Link>
   <div className='promo'>
-    <iframe width="100%" height="350px" src="https://www.youtube.com/embed/mzWAVovs0Qk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="100%" height="350px" src="https://www.youtube.com/embed/mzWAVovs0Qk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"></iframe>
   </div>
   <Link to='/about'>
     <div className='promo'>

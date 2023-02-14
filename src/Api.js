@@ -93,6 +93,14 @@ class Api {
             }
         })
     }
+
+    getUsers() {
+        return fetch(`${this.path}/users`, {
+            headers: {
+                "authorization": `Bearer ${this.token}`
+            }
+        })
+    }
 }
 
 export {Api};

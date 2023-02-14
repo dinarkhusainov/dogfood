@@ -7,10 +7,10 @@ import { ButtonMy } from '../components';
 
 
 const Product = () => {
-    const {api, PATH, user, setProducts } = useContext(Ctx)
+    const {api, PATH, user, setProducts, product, setProduct } = useContext(Ctx)
     const navigate = useNavigate();
     const {id} = useParams();
-    const [product, setProduct] = useState({});
+    
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(5);
 
@@ -48,7 +48,7 @@ const Product = () => {
                 clear();}
             }
         )}
-        
+
     const clear = (e) => {
         setRating(5);
         setReview("")
@@ -106,7 +106,7 @@ const Product = () => {
                     </form>
                     <h3>Отзывы</h3>
                     {product.reviews && product.reviews.length >0 && 
-                    product.reviews.map((el, i) => <Review {...el} key={i}/>)}
+                    product.reviews.map((el, i) => <Review {...el} id={id} key={i}/>)}
                 </div>
             </div>
        </>

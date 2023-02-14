@@ -24,6 +24,8 @@ function App() {
   const [favorites, setFavorites] = useState ([]);
   const [basket, setBasket] = useState(localStorage.getItem("basket8") ? JSON.parse(localStorage.getItem("basket8")): [])
   const [gds, setGds] = useState([]);
+  const [users, setUsers] =useState ([]);
+  const [product, setProduct] = useState({});
   
   useEffect(() => {
     if (token) {
@@ -32,6 +34,16 @@ function App() {
       .then (data => {
         setProducts(data.products);
         setVisibleProducts(data.products);
+      })
+    }
+  }, []);
+
+  useEffect(() => {
+    if (token) {
+    api.getUsers()
+      .then((res) => res.json())
+      .then (data => {
+        setUsers(data);
       })
     }
   }, []);
@@ -93,6 +105,8 @@ function App() {
       favorites: favorites,
       basket:basket,
       gds:gds,
+      users:users,
+      product,
       setUser: setUser,
       setToken: setToken,
       setApi: setApi,
@@ -102,6 +116,8 @@ function App() {
       setFavorites: setFavorites,
       setBasket:setBasket,
       setGds:setGds,
+      setUsers: setUsers,
+      setProduct,
       PATH: PATH,
 
     }}>    
