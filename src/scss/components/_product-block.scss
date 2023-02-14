@@ -3,20 +3,17 @@
 .product-block {
   box-shadow: 0 0 5px #2226;
   border-radius: 1em;
-  padding: 0 1em 1em;
   box-sizing: border-box;
-  display: grid;
-  gap: 5px;
-  grid-template-columns: (3, 1fr);
-  justify-content: center;
-  align-items: center;
   max-width: 320px;
   text-align: center;
-  margin-bottom: 5px;
+  padding: 20px 5px;
 
 
   &__image {
-    max-width: 260px;
+    width: 260px;
+    height: 200px;
+    margin-bottom: 20px;
+ 
   }
 
   &__title {
@@ -56,10 +53,11 @@
     letter-spacing: 0.015em;
     padding-bottom: 8px;
   }
+
   &__heart {
     position: relative;
-    top: .2em;
-    left: 7.5em;
+    top: -7.2em;
+    left: 17em;
     color: $orange;
   }
 }

@@ -48,21 +48,7 @@ const Product = () => {
                 clear();}
             }
         )}
-
-    // const deleteReview = (e) => {
-    //         // alert("Вы действительно хотите удалить товар?")
-    //         api.delReview(id, e.target.getAttribute("data-id")) 
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 // if(!data.error) {
-    //                 //     setProducts(prev => prev.filter(g =>g._id !==data._id))
-    //                 //     navigate(`${PATH}catalog`);
-    //                 // } 
-    //                 console.log(data)
-    //             })
-    //         }    
-    
-
+        
     const clear = (e) => {
         setRating(5);
         setReview("")
