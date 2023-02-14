@@ -1,0 +1,21 @@
+@import '../variables';
+
+.cart__container{
+padding:  1em 1em;
+width: 100%;
+text-align: center;
+margin: 0;
+
+    a:hover {
+        h2 {
+        background-color: #fff;
+        color: $orange;
+        }
+}
+    .cart__img {
+    margin-top: 15px;
+    width: 55%;
+}
+}
+
+

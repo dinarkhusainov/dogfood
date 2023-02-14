@@ -1,0 +1,80 @@
+@import '../../scss/_variables.scss';
+
+.modal1--container {
+    position: fixed;
+    background-color: #2228;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal1 {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #0006, 0 0 8px 2px #0004;
+    display: grid;
+    gap: 20px;
+    position: relative;
+}
+
+.modal1 h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.modal-close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -4px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #fe5f1e;
+  }
+
+form {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal1__input  {
+    color: #8f8f8f;
+    font-size: 1rem;
+    width: 250px;
+    height: 30px;
+    border: transparent;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 10px 10px;
+    margin: 0px auto;
+    border-radius: 30px;
+}
+ .modal1__input:focus {
+    box-shadow: 0 10px 20px rgba(241, 115, 42, 0.19), 0 6px 6px rgba(228, 81, 13, 0.568);
+ }
+
+button.btn1 {
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ffdf8c;
+}
+
+ button.link {
+    background-color: transparent;
+    border: 1px solid #ffdf8c;
+    box-sizing: border-box;
+ }
+ 
