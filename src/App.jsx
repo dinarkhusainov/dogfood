@@ -26,6 +26,7 @@ function App() {
   const [gds, setGds] = useState([]);
   const [users, setUsers] =useState ([]);
   const [product, setProduct] = useState({});
+  const [input, setInput] = useState('')
   
   useEffect(() => {
     if (token) {
@@ -107,6 +108,7 @@ function App() {
       gds:gds,
       users:users,
       product,
+      input,
       setUser: setUser,
       setToken: setToken,
       setApi: setApi,
@@ -118,6 +120,7 @@ function App() {
       setGds:setGds,
       setUsers: setUsers,
       setProduct,
+      setInput,
       PATH: PATH,
 
     }}>    

@@ -9,16 +9,15 @@ import usePagination from "../hooks/usePagination";
 
 
 function Catalog() {
-    const { visibleProducts, PATH, user, setModalActive } = useContext(Ctx);
+    const { visibleProducts, PATH, user, setModalActive, setVisibleProducts, setInput, products} = useContext(Ctx);
     const paginate = usePagination(visibleProducts, 12)
     const logIn = (e) => {
         e.preventDefault();
         setModalActive(prev => !prev);
       }
     const clearSearch = () => {
-        console.log('clear')
-        //updateText("");
-        //setVisibleProducts (visibleProducts);
+        setInput("");
+        setVisibleProducts (products);
     }
 
     return <>
@@ -43,7 +42,7 @@ function Catalog() {
             </div> 
             : <div className="searchNull__container">
                 <h3> Извините, по вашему запросу ничего не найдено</h3>
-                <Link to={PATH} onClick={clearSearch}> <h2> Перейти к покупкам </h2></Link>
+                <Link to={PATH + "catalog"} onClick={clearSearch}> <h2> Перейти к покупкам </h2></Link>
                 <img className='searchNull__img' src={searchNullPng} alt="Товаров не найдено" />
             </div>
         }

@@ -12,6 +12,7 @@ export default React.createContext({
     basket: [],
     favorites: [],
     product: {},
+    input: "",
     setProducts: () => {},
     setVisibleProducts: () => {},
     setBasket: () => {},
@@ -23,4 +24,5 @@ export default React.createContext({
     setApi: () => {},
     setModalActive: () => {},
     setProduct: () => {},
+    setInput: () => {},
 });

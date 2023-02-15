@@ -6,8 +6,8 @@ import Ctx from "../../Ctx";
 
 function Search () {
     const navigate = useNavigate();
-    const {products, setVisibleProducts, PATH} = useContext(Ctx);
-    const [input, setInput] = useState('')
+    const {products, setVisibleProducts, input, setInput, PATH} = useContext(Ctx);
+    
     const [searchData, setSearchData] = useState(products);
     const search = (e) => {
         navigate (PATH + 'catalog');
