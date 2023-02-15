@@ -81,7 +81,7 @@ return (
         <p></p>
         <div className="product-block__bottom">
         {discount > 0 ? <div className="product-block__price"><p> <s> {price} ₽</s></p>
-          <h2>{price- price*discount/100} ₽</h2></div> : <h2>{price} ₽</h2>} 
+          <h2>{Math.round(price- price*discount/100)} ₽</h2></div> : <h2>{price} ₽</h2>} 
           
             <button className="button button--outline button--add" onClick={buy}>
                 <svg
