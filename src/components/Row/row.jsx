@@ -11,6 +11,7 @@ function Row  ({name, pictures, cnt, price, id, discount}) {
         setFlag(true);
         setN(n + 1);
     }
+  
     const decrement = () => {
         setFlag(true);
         setN(n - 1);

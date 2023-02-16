@@ -75,11 +75,11 @@ function Catalog() {
                             <li className={`btn ${btnType === "up" ? "active" : ""}`} title="up" onClick={updSort}> Цена <SortDown /></li>
                         </ul>
                     </div>
+                    <Link to={PATH +'add'}> <ButtonMy className="button"> Добавить товар </ButtonMy></Link>
                 </div>
                 <div className="add__product">
-                    <h2>Все товары</h2>
                     <Pagination hook={paginate} />
-                    <Link to={PATH +'add'}> <ButtonMy className="button"> Добавить товар </ButtonMy></Link>
+                    
                 </div>
                 <div className="content__items">
                         {paginate.setPageData().map ((el, i)=> 

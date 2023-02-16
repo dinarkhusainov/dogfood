@@ -97,7 +97,7 @@ return (
               />
               </svg>
               <span>Добавить</span>
-              <i></i>
+              {/* <i></i> */}
             </button>
           </div>
       </div>
