@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import Ctx from "../../Ctx";
 
-function Card({name, price, discount, wight, description, likes, isCart, _id, available, stock, pictures, tags}) {
+function Card({name, price, discount, wight, likes, isCart, _id, available, stock, pictures, tags}) {
   const {user, setFavorites, setProducts, api, setBasket, setVisibleProducts} =useContext(Ctx);
   const [like, setLike] = useState(likes && likes.includes(user._id));
   const [flag, setFlag] = useState(false);

@@ -59,9 +59,7 @@ function Catalog() {
     }
 
     useEffect(() => {
-        if (sortProducts.length === 0) {
             setSortProducts(visibleProducts);
-        }
     }, [visibleProducts]); 
 
     return <>
@@ -108,5 +106,4 @@ function Catalog() {
     }
     </>
 }  
-
 export default Catalog;

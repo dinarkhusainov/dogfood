@@ -6,14 +6,12 @@ import Ctx from "../../Ctx";
 
 function Search () {
     const navigate = useNavigate();
-    const {products, setVisibleProducts, input, setInput, PATH} = useContext(Ctx);
+    const {products, setVisibleProducts, input, setInput, PATH, visibleProducts} = useContext(Ctx);
     
-    const [searchData, setSearchData] = useState(products);
     const search = (e) => {
         navigate (PATH + 'catalog');
         setInput(e.target.value);
         let array = products.filter(el=>el.name.toLowerCase().includes(e.target.value.toLowerCase()));
-        setSearchData(array);
         setVisibleProducts(array);
     }
 
@@ -25,7 +23,7 @@ function Search () {
                 <input type="search" placeholder='Найти' value={input} onChange={search} />
             </div>
             {input && <div className="search__result"> 
-                Найдено {searchData.length} товаров            
+                Найдено {visibleProducts.length} товаров            
             </div>}
        </div>        
     )
