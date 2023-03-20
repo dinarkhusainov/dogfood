@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/dogfood/static/css/main.83288d98.css",
+    "main.js": "/dogfood/static/js/main.82176b50.js",
+    "static/media/promokat.png": "/dogfood/static/media/promokat.afd8692262813b275a90.png",
+    "static/media/promo.jpg": "/dogfood/static/media/promo.0810d2d4e2050d62963c.jpg",
+    "static/media/searchNull.png": "/dogfood/static/media/searchNull.74d89eb86e8bb6ef0aaa.png",
+    "static/media/priut.jpg": "/dogfood/static/media/priut.6c10c73ad3b97d4e6d26.jpg",
+    "static/media/help.jpg": "/dogfood/static/media/help.b0d004f28ae4ad582b96.jpg",
+    "static/media/empty-cart.png": "/dogfood/static/media/empty-cart.b09683ee928bc22e9899.png",
+    "static/media/ProximaNova-Regular.eot": "/dogfood/static/media/ProximaNova-Regular.d97f8f32c098b28c3ab0.eot",
+    "static/media/ProximaNova-Regular.ttf": "/dogfood/static/media/ProximaNova-Regular.b078618b41b9b6629ea0.ttf",
+    "static/media/ProximaNova-Bold.eot": "/dogfood/static/media/ProximaNova-Bold.787088b281e017f8c449.eot",
+    "static/media/ProximaNova-Extrabld.eot": "/dogfood/static/media/ProximaNova-Extrabld.b9fcd9fbe4d0b5e73cbd.eot",
+    "static/media/ProximaNova-Bold.ttf": "/dogfood/static/media/ProximaNova-Bold.7722451a8c88b6100185.ttf",
+    "static/media/ProximaNova-Extrabld.ttf": "/dogfood/static/media/ProximaNova-Extrabld.026a945d32b05c6c8710.ttf",
+    "static/media/ProximaNova-Black.eot": "/dogfood/static/media/ProximaNova-Black.9a114cea74aac9cc06cc.eot",
+    "static/media/ProximaNova-Black.ttf": "/dogfood/static/media/ProximaNova-Black.5335144c30bdc79a2d6d.ttf",
+    "static/media/inst.jpg": "/dogfood/static/media/inst.00e22aa52e9782efc930.jpg",
+    "static/media/ProximaNova-Regular.woff": "/dogfood/static/media/ProximaNova-Regular.99528640efded3e12591.woff",
+    "static/media/ProximaNova-Bold.woff": "/dogfood/static/media/ProximaNova-Bold.1f267da183b3d4fe3d5b.woff",
+    "static/media/ProximaNova-Extrabld.woff": "/dogfood/static/media/ProximaNova-Extrabld.64f095e95e4018946cb1.woff",
+    "static/media/ProximaNova-Black.woff": "/dogfood/static/media/ProximaNova-Black.131eab64b8a971a4fc73.woff",
+    "static/media/favorites2.jpg": "/dogfood/static/media/favorites2.0cb57bb8cc358e861326.jpg",
+    "static/media/dogfoodlogo.png": "/dogfood/static/media/dogfoodlogo.a065a4a48c3f55399833.png",
+    "index.html": "/dogfood/index.html",
+    "main.83288d98.css.map": "/dogfood/static/css/main.83288d98.css.map",
+    "main.82176b50.js.map": "/dogfood/static/js/main.82176b50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83288d98.css",
+    "static/js/main.82176b50.js"
+  ]
+}
