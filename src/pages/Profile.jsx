@@ -19,7 +19,7 @@ function Profile () {
         e.preventDefault();
         setUser(null);
         localStorage.removeItem("sm8");
-        navigate(PATH);
+        navigate(PATH + "dogfood");
     }
     const updUser = () => {
         api.updUser({

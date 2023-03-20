@@ -20,7 +20,7 @@ function Header() {
   return (
       <header className="header">
         <div className="header__container">
-          <Link to={PATH}>
+          <Link to={PATH+ "dogfood"}>
             <div className="header__log">
               <img width="60" height="60" src={logoSvg} alt="DogFood logo" />
               <div>

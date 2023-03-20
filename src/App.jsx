@@ -128,7 +128,7 @@ function App() {
         <Header />
         <main className="content">
           <Routes>
-            <Route path={PATH} element={<Home />}/>
+            <Route path={PATH + "dogfood"} element={<Home />}/>
             <Route path={PATH + 'catalog'} element= {<Catalog />}/>
             <Route path={PATH + 'profile'} element= {<Profile />}/>
             <Route path={PATH + 'catalog/:id'} element= {<Product />}/>

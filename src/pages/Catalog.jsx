@@ -100,7 +100,7 @@ function Catalog() {
         <div className="searchNull__container">
             <h3> Извините, вы не авторизовались </h3>
             <Link><h2 onClick={logIn} > Войти / Зарегистрироваться </h2></Link>
-            <Link to={PATH}> <h2> Перейти на главную страницу </h2></Link>
+            <Link to={PATH+ "dogfood"}> <h2> Перейти на главную страницу </h2></Link>
             <img className='searchNull__img' src={searchNullPng} alt="Товаров не найдено" />
         </div> 
     }
