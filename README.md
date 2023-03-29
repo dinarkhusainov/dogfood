@@ -30,22 +30,22 @@
 
 <div id="photo">
   <h4>Главная страница</h4>
-  <img src="https://github.com/dinarkhusainov/travelblog/blob/master/img%20md/Home.gif" width="700"/>
+  <img src="https://github.com/dinarkhusainov/dogfood/blob/master/img%20md/Home.gif" width="700"/>
   
   ##
   
-  <h4>Регистрация / Авторизация / Посты</h4>
-  <img src="https://github.com/dinarkhusainov/travelblog/blob/master/img%20md/author.gif" width="700"/>
+  <h4> Каталог товаров / Корзина / Избранное </h4>
+  <img src="https://github.com/dinarkhusainov/dogfood/blob/master/img%20md/catalog%20basket%20favorite.gif" width="700"/>
   
   ##
   
-  <h4>Избранное / Личный кабинет</h4>
-  <img src="https://github.com/dinarkhusainov/travelblog/blob/master/img%20md/favorite.gif" width="700"/>
+  <h4> Добавление товара / Фильтрация по категориям </h4>
+  <img src="https://github.com/dinarkhusainov/dogfood/blob/master/img%20md/add%20categories.gif" width="700"/>
   
   ##
   
-  <h4>Онлайн Радио </h4>
-  <img src="https://github.com/dinarkhusainov/travelblog/blob/master/img%20md/radio.gif" width="700"/>
+  <h4> Страница продукта / Поиск / Личный кабинет </h4>
+  <img src="https://github.com/dinarkhusainov/dogfood/blob/master/img%20md/product%20search%20LK.gif" width="700"/>
   
 </div>
 
