@@ -1,5 +1,5 @@
 <h2> Online Store "DogFood" </h2>
-<div id="header" align="center">
+<div id="header" >
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGMwMjdhODA5YjQzMDkwYTA0OGU0YTU3MzZlOWFjODY2NmYxZDJjYiZjdD1n/yvgaJzI8Q01Ow/giphy.gif" width="200"/>
 </div>
 <div>
